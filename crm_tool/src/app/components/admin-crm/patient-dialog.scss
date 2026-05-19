@@ -2,6 +2,7 @@
   display: grid;
   gap: 12px;
   width: min(760px, calc(100vw - 96px));
+  margin-top: 6px;
 }
 
 .patient-form__row {

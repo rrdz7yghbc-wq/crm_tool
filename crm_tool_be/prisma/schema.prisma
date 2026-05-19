@@ -13,7 +13,7 @@ datasource db {
 }
 
 model Patient {
-  id             String         @id @default(cuid())
+  id             Int            @id @default(autoincrement())
   name           String
   lastname       String
   phone          String
@@ -34,7 +34,7 @@ model PatientVisit {
   date      String
   reason    String
   notes     String   @db.Text
-  patientId String
+  patientId Int
   patient   Patient  @relation(fields: [patientId], references: [id], onDelete: Cascade)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

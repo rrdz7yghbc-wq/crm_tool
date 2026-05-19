@@ -21,9 +21,6 @@ async function main() {
         address: patient.address,
         dateOfBirth: patient.dateOfBirth,
         medicalHistory: patient.medicalHistory,
-        visits: {
-          create: patient.visits,
-        },
       },
     });
   }

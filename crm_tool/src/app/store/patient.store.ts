@@ -1,7 +1,7 @@
 import { inject } from '@angular/core';
 import { patchState, signalStore, withMethods, withState } from '@ngrx/signals';
-
-import { Patient, PatientFormValue, PatientService } from '../services/patient.service';
+import { Patient } from '../interfaces/patient.interfaces';
+import { PatientService } from '../services/patient.service';
 
 interface PatientState {
   patients: Patient[];
@@ -33,10 +33,10 @@ export const PatientStore = signalStore(
           }),
       });
     },
-    viewPatient(id: string): void {
+    viewPatient(id: number): void {
       patchState(store, { isLoading: true, error: null });
 
-      patientService.getPatient(id).subscribe({
+      patientService.getPatientById(id).subscribe({
         next: (patient) =>
           patchState(store, {
             selectedPatient: patient || null,
@@ -49,7 +49,7 @@ export const PatientStore = signalStore(
           }),
       });
     },
-    insertPatient(patient: PatientFormValue): void {
+    insertPatient(patient: Patient): void {
       patientService.insertPatient(patient).subscribe({
         next: (createdPatient) =>
           patchState(store, (state) => ({
@@ -60,8 +60,8 @@ export const PatientStore = signalStore(
         error: () => patchState(store, { error: 'Unable to create patient.' }),
       });
     },
-    updatePatient(id: string, patient: PatientFormValue): void {
-      patientService.updatePatient(id, patient).subscribe({
+    updatePatientById(id: number, patient: Patient): void {
+      patientService.updatePatientById(id, patient).subscribe({
         next: (updatedPatient) =>
           patchState(store, (state) => ({
             patients: state.patients.map((item) => (item.id === id ? updatedPatient : item)),

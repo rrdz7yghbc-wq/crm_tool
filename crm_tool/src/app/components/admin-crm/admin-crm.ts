@@ -5,10 +5,9 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { RouterLink } from '@angular/router';
-
-import { Patient, PatientFormValue } from '../../services/patient.service';
 import { PatientStore } from '../../store';
 import { PatientDialog } from './patient-dialog';
+import { Patient } from '../../interfaces/patient.interfaces';
 
 @Component({
   selector: 'app-admin-crm',
@@ -55,7 +54,7 @@ export class AdminCrm implements OnInit {
 
   protected openCreatePatientDialog(): void {
     this.dialog
-      .open<PatientDialog, null, PatientFormValue>(PatientDialog, {
+      .open<PatientDialog, null, Patient>(PatientDialog, {
         width: 'auto',
         maxWidth: 'calc(100vw - 32px)',
         data: null,
@@ -72,7 +71,7 @@ export class AdminCrm implements OnInit {
     this.patientStore.viewPatient(patient.id);
 
     this.dialog
-      .open<PatientDialog, Patient, PatientFormValue>(PatientDialog, {
+      .open<PatientDialog, Patient, Patient>(PatientDialog, {
         width: 'auto',
         maxWidth: 'calc(100vw - 32px)',
         data: patient,
@@ -80,7 +79,7 @@ export class AdminCrm implements OnInit {
       .afterClosed()
       .subscribe((updatedPatient) => {
         if (updatedPatient) {
-          this.patientStore.updatePatient(patient.id, updatedPatient);
+          this.patientStore.updatePatientById(patient.id, updatedPatient);
         }
       });
   }

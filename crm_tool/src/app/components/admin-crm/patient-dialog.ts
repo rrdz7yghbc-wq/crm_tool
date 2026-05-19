@@ -12,7 +12,7 @@ import {
 import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { Patient, PatientFormValue } from '../../services/patient.service';
+import { Patient } from '../../interfaces/patient.interfaces';
 
 @Component({
   selector: 'app-patient-dialog',
@@ -51,9 +51,6 @@ export class PatientDialog {
       return;
     }
 
-    this.dialogRef.close({
-      ...this.patientForm.getRawValue(),
-      visits: this.patient?.visits || [],
-    } satisfies PatientFormValue);
+    this.dialogRef.close({...this.patientForm.getRawValue()});
   }
 }
