@@ -1,0 +1,22 @@
+.event-details {
+  display: grid;
+  gap: 14px;
+  min-width: min(360px, 70vw);
+  margin: 0;
+}
+
+.event-details div {
+  display: grid;
+  gap: 4px;
+}
+
+.event-details dt {
+  color: var(--mat-sys-on-surface-variant, #667085);
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.event-details dd {
+  margin: 0;
+  color: var(--mat-sys-on-surface, #1f2937);
+}

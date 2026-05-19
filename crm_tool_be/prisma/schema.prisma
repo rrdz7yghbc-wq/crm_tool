@@ -1,0 +1,43 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Patient {
+  id             String         @id @default(cuid())
+  name           String
+  lastname       String
+  phone          String
+  email          String
+  address        String
+  dateOfBirth    String
+  medicalHistory String         @db.Text
+  visits         PatientVisit[]
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+
+  @@index([name])
+  @@index([lastname])
+}
+
+model PatientVisit {
+  id        String   @id @default(cuid())
+  date      String
+  reason    String
+  notes     String   @db.Text
+  patientId String
+  patient   Patient  @relation(fields: [patientId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([patientId])
+}

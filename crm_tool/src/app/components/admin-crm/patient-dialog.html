@@ -1,0 +1,67 @@
+<h2 mat-dialog-title>{{ patient ? 'Patient record' : 'New patient' }}</h2>
+
+<mat-dialog-content>
+  <form class="patient-form" [formGroup]="patientForm">
+    <div class="patient-form__row">
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Lastname</mat-label>
+        <input matInput formControlName="lastname" />
+      </mat-form-field>
+    </div>
+
+    <div class="patient-form__row">
+      <mat-form-field appearance="outline">
+        <mat-label>Phone</mat-label>
+        <input matInput formControlName="phone" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email" />
+      </mat-form-field>
+    </div>
+
+    <div class="patient-form__row">
+      <mat-form-field appearance="outline">
+        <mat-label>Address</mat-label>
+        <input matInput formControlName="address" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Date of birth</mat-label>
+        <input matInput type="date" formControlName="dateOfBirth" />
+      </mat-form-field>
+    </div>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Recorded medical history</mat-label>
+      <textarea matInput formControlName="medicalHistory" rows="5"></textarea>
+    </mat-form-field>
+  </form>
+
+  @if (patient?.visits?.length) {
+    <mat-divider />
+
+    <section class="visit-history">
+      <h3>Visit history</h3>
+      @for (visit of patient?.visits; track visit.date + visit.reason) {
+        <article>
+          <strong>{{ visit.date }} · {{ visit.reason }}</strong>
+          <p>{{ visit.notes }}</p>
+        </article>
+      }
+    </section>
+  }
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button type="button" mat-dialog-close>Cancel</button>
+  <button mat-flat-button type="button" (click)="save()">
+    {{ patient ? 'Update patient' : 'Create patient' }}
+  </button>
+</mat-dialog-actions>

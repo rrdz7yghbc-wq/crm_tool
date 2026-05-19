@@ -1,0 +1,3 @@
+- npm i
+- npx prisma migrate deploy
+- nest start (npm start)

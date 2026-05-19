@@ -1,0 +1,30 @@
+.calendar-event-form {
+  display: grid;
+  gap: 12px;
+  width: min(720px, calc(100vw - 96px));
+  padding-top: 4px;
+}
+
+.calendar-event-form__row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+textarea {
+  resize: vertical;
+}
+
+@media (max-width: 720px) {
+  .calendar-event-form {
+    width: min(420px, calc(100vw - 64px));
+  }
+
+  .calendar-event-form__row {
+    grid-template-columns: 1fr;
+  }
+}

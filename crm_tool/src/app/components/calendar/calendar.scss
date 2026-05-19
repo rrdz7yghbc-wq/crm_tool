@@ -1,0 +1,83 @@
+.calendar-page {
+  min-height: 100dvh;
+  padding: 24px;
+  background: var(--mat-sys-surface-container-low, #f7f9fc);
+}
+
+.calendar-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  max-width: 1180px;
+  margin: 0 auto 12px;
+}
+
+full-calendar,
+.calendar-loading {
+  display: block;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid var(--mat-sys-outline-variant, #d7dbe2);
+  border-radius: 8px;
+  background: var(--mat-sys-surface, #ffffff);
+  color: var(--mat-sys-on-surface, #1f2937);
+}
+
+.calendar-loading {
+  min-height: 640px;
+}
+
+:host ::ng-deep {
+  .fc {
+    font-family: inherit;
+  }
+
+  .fc .fc-toolbar {
+    gap: 16px;
+    margin-bottom: 18px;
+  }
+
+  .fc .fc-toolbar-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .fc .fc-button {
+    border: 1px solid var(--mat-sys-outline-variant, #d7dbe2);
+    border-radius: 6px;
+    background: var(--mat-sys-surface-container, #eef2f7);
+    color: var(--mat-sys-on-surface, #1f2937);
+    box-shadow: none;
+    text-transform: capitalize;
+  }
+
+  .fc .fc-button-primary:not(:disabled).fc-button-active,
+  .fc .fc-button-primary:not(:disabled):active,
+  .fc .fc-button:hover {
+    border-color: var(--mat-sys-primary, #005cbb);
+    background: var(--mat-sys-primary, #005cbb);
+    color: var(--mat-sys-on-primary, #ffffff);
+  }
+
+  .fc .fc-daygrid-day-frame {
+    min-height: 128px;
+    padding: 6px;
+  }
+
+  .fc .fc-day-today {
+    background: var(--mat-sys-primary-container, #d7e3ff);
+  }
+
+  .fc .fc-daygrid-event {
+    border-radius: 5px;
+    padding: 2px 4px;
+  }
+
+  .fc .calendar-event--taken {
+    border-color: var(--mat-sys-outline, #98a2b3);
+    background: var(--mat-sys-surface-container-high, #e3e8ef);
+    color: var(--mat-sys-on-surface-variant, #475467);
+    cursor: default;
+  }
+}

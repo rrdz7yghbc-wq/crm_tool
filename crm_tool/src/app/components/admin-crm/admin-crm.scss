@@ -1,0 +1,76 @@
+.admin-crm {
+  min-height: 100dvh;
+  padding: 24px;
+  background: var(--mat-sys-surface-container-low, #f7f9fc);
+}
+
+.admin-crm__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 1180px;
+  margin: 0 auto 18px;
+
+  p,
+  h1 {
+    margin: 0;
+  }
+
+  p {
+    color: var(--mat-sys-on-surface-variant, #667085);
+    font-size: 0.875rem;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  nav {
+    display: flex;
+    gap: 10px;
+  }
+}
+
+.admin-crm__table {
+  max-width: 1180px;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid var(--mat-sys-outline-variant, #d7dbe2);
+  border-radius: 8px;
+  background: var(--mat-sys-surface, #ffffff);
+}
+
+table {
+  width: 100%;
+}
+
+.patient-link {
+  border: 0;
+  background: transparent;
+  color: var(--mat-sys-primary, #005cbb);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+  padding: 0;
+  text-align: left;
+}
+
+.patient-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 760px) {
+  .admin-crm {
+    padding: 12px;
+  }
+
+  .admin-crm__header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .admin-crm__table {
+    overflow-x: auto;
+  }
+}

@@ -1,0 +1,36 @@
+.admin-login {
+  display: grid;
+  min-height: 100dvh;
+  place-items: center;
+  padding: 24px;
+  background: var(--mat-sys-surface-container-low, #f7f9fc);
+}
+
+.admin-login__panel {
+  width: min(100%, 420px);
+  padding: 28px;
+  border: 1px solid var(--mat-sys-outline-variant, #d7dbe2);
+  border-radius: 8px;
+  background: var(--mat-sys-surface, #ffffff);
+
+  a {
+    color: var(--mat-sys-primary, #005cbb);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  h1 {
+    margin: 18px 0 8px;
+    font-size: 1.75rem;
+  }
+
+  p {
+    margin: 0 0 22px;
+    color: var(--mat-sys-on-surface-variant, #667085);
+  }
+}
+
+.admin-login__form {
+  display: grid;
+  gap: 12px;
+}
