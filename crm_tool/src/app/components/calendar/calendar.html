@@ -1,19 +1,16 @@
 <section class="calendar-page">
-  <div class="calendar-actions">
-    @if (isAdmin) {
-      <a mat-button routerLink="/admin/crm">Patient CRM</a>
-    }
-    <button mat-flat-button type="button" (click)="openCreateEventDialog()">
-      {{ isAdmin ? 'New event' : 'Book appointment' }}
-    </button>
-  </div>
+    <div class="calendar-actions">
+        @if (isAdmin) {
+            <a mat-button routerLink="/admin/crm">Patient CRM</a>
+        }
+        <button mat-flat-button type="button" (click)="openCreateEventDialog()">
+            {{ isAdmin ? "New event" : "Book appointment" }}
+        </button>
+    </div>
 
-  @if (isBrowser) {
-    <full-calendar
-      [options]="calendarOptions"
-      [events]="calendarEvents()"
-    />
-  } @else {
-    <div class="calendar-loading" aria-hidden="true">Calendar loading</div>
-  }
+    @if (isBrowser) {
+        <full-calendar [options]="calendarOptions" [events]="calendarEvents()" />
+    } @else {
+        <div class="calendar-loading" aria-hidden="true">Calendar loading</div>
+    }
 </section>

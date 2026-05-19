@@ -1,81 +1,69 @@
 <form class="calendar-event-form" [formGroup]="form">
-  <div class="calendar-event-form__row">
-    <mat-form-field appearance="outline">
-      <mat-label>Name</mat-label>
-      <input matInput formControlName="name" />
-      @if (form.controls.name.hasError('required')) {
-        <mat-error>Name is required</mat-error>
-      }
-    </mat-form-field>
+    <div class="calendar-event-form__row">
+        <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name" />
+            @if (form.controls.name.hasError("required")) {
+                <mat-error>Name is required</mat-error>
+            }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Lastname</mat-label>
+            <input matInput formControlName="lastname" />
+            @if (form.controls.lastname.hasError("required")) {
+                <mat-error>Lastname is required</mat-error>
+            }
+        </mat-form-field>
+    </div>
+
+    <div class="calendar-event-form__row">
+        <mat-form-field appearance="outline">
+            <mat-label>Phone</mat-label>
+            <input matInput formControlName="phone" />
+            @if (form.controls.phone.hasError("required")) {
+                <mat-error>Phone is required</mat-error>
+            }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" formControlName="email" />
+            @if (form.controls.email.hasError("required")) {
+                <mat-error>Email is required</mat-error>
+            }
+            @if (form.controls.email.hasError("email")) {
+                <mat-error>Enter a valid email</mat-error>
+            }
+        </mat-form-field>
+    </div>
 
     <mat-form-field appearance="outline">
-      <mat-label>Lastname</mat-label>
-      <input matInput formControlName="lastname" />
-      @if (form.controls.lastname.hasError('required')) {
-        <mat-error>Lastname is required</mat-error>
-      }
-    </mat-form-field>
-  </div>
-
-  <div class="calendar-event-form__row">
-    <mat-form-field appearance="outline">
-      <mat-label>Phone</mat-label>
-      <input matInput formControlName="phone" />
-      @if (form.controls.phone.hasError('required')) {
-        <mat-error>Phone is required</mat-error>
-      }
+        <mat-label>Address</mat-label>
+        <input matInput formControlName="address" />
     </mat-form-field>
 
-    <mat-form-field appearance="outline">
-      <mat-label>Email</mat-label>
-      <input matInput type="email" formControlName="email" />
-      @if (form.controls.email.hasError('required')) {
-        <mat-error>Email is required</mat-error>
-      }
-      @if (form.controls.email.hasError('email')) {
-        <mat-error>Enter a valid email</mat-error>
-      }
-    </mat-form-field>
-  </div>
+    <div class="calendar-event-form__row">
+        <mat-form-field appearance="outline">
+            <mat-label>Date from</mat-label>
+            <input matInput readonly formControlName="dateFrom" [matDatepicker]="dateFromPicker" (click)="dateFromPicker.open()" />
+            <mat-datepicker-toggle matIconSuffix [for]="dateFromPicker" />
+            <mat-datepicker #dateFromPicker />
+            @if (form.controls.dateFrom.hasError("required")) {
+                <mat-error>Date from is required</mat-error>
+            }
+        </mat-form-field>
 
-  <mat-form-field appearance="outline">
-    <mat-label>Address</mat-label>
-    <input matInput formControlName="address" />
-  </mat-form-field>
-
-  <div class="calendar-event-form__row">
-    <mat-form-field appearance="outline">
-      <mat-label>Date from</mat-label>
-      <input
-        matInput
-        readonly
-        formControlName="dateFrom"
-        [matDatepicker]="dateFromPicker"
-        (click)="dateFromPicker.open()"
-      />
-      <mat-datepicker-toggle matIconSuffix [for]="dateFromPicker" />
-      <mat-datepicker #dateFromPicker />
-      @if (form.controls.dateFrom.hasError('required')) {
-        <mat-error>Date from is required</mat-error>
-      }
-    </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Date to</mat-label>
+            <input matInput readonly formControlName="dateTo" [matDatepicker]="dateToPicker" (click)="dateToPicker.open()" />
+            <mat-datepicker-toggle matIconSuffix [for]="dateToPicker" />
+            <mat-datepicker #dateToPicker />
+        </mat-form-field>
+    </div>
 
     <mat-form-field appearance="outline">
-      <mat-label>Date to</mat-label>
-      <input
-        matInput
-        readonly
-        formControlName="dateTo"
-        [matDatepicker]="dateToPicker"
-        (click)="dateToPicker.open()"
-      />
-      <mat-datepicker-toggle matIconSuffix [for]="dateToPicker" />
-      <mat-datepicker #dateToPicker />
+        <mat-label>Comments</mat-label>
+        <textarea matInput formControlName="comments" rows="4"></textarea>
     </mat-form-field>
-  </div>
-
-  <mat-form-field appearance="outline">
-    <mat-label>Comments</mat-label>
-    <textarea matInput formControlName="comments" rows="4"></textarea>
-  </mat-form-field>
 </form>

@@ -6,9 +6,8 @@ import { UpdatePatientDto } from './dto/update-patient.dto';
 
 @Injectable()
 export class CustomerService {
-    
     constructor(private readonly prisma: PrismaService) {}
-  
+
     private normalizeId(id: number | string): number {
         return typeof id === 'string' ? parseInt(id, 10) : id;
     }

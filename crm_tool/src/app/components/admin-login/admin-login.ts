@@ -6,18 +6,18 @@ import { MatInputModule } from '@angular/material/input';
 import { Router, RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-admin-login',
-  imports: [MatButtonModule, MatFormFieldModule, MatInputModule, ReactiveFormsModule, RouterLink],
-  templateUrl: './admin-login.html',
-  styleUrl: './admin-login.scss',
+    selector: 'app-admin-login',
+    imports: [MatButtonModule, MatFormFieldModule, MatInputModule, ReactiveFormsModule, RouterLink],
+    templateUrl: './admin-login.html',
+    styleUrl: './admin-login.scss',
 })
 export class AdminLogin {
-  protected readonly email = new FormControl('owner@asterdental.test', { nonNullable: true });
-  protected readonly password = new FormControl('demo-password', { nonNullable: true });
+    protected readonly email = new FormControl('owner@asterdental.test', { nonNullable: true });
+    protected readonly password = new FormControl('demo-password', { nonNullable: true });
 
-  public constructor(private readonly router: Router) {}
+    public constructor(private readonly router: Router) {}
 
-  public login(): void {
-    this.router.navigate(['/admin/calendar']);
-  }
+    public login(): void {
+        this.router.navigate(['/admin/calendar']);
+    }
 }

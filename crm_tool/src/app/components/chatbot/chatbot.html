@@ -1,43 +1,37 @@
-<button
-  class="chatbot-toggle"
-  mat-fab
-  type="button"
-  aria-label="Open FAQ chat"
-  (click)="chatbotStore.toggle()"
->
-  <mat-icon>{{ chatbotStore.isOpen() ? 'close' : 'chat' }}</mat-icon>
+<button class="chatbot-toggle" mat-fab type="button" aria-label="Open FAQ chat" (click)="chatbotStore.toggle()">
+    <mat-icon>{{ chatbotStore.isOpen() ? "close" : "chat" }}</mat-icon>
 </button>
 
 @if (chatbotStore.isOpen()) {
-  <section class="chatbot-panel" aria-label="FAQ chat">
-    <header class="chatbot-panel__header">
-      <div>
-        <h2>FAQ assistant</h2>
-        <p>Quick answers for calendar bookings</p>
-      </div>
-      <button mat-icon-button type="button" aria-label="Close FAQ chat" (click)="chatbotStore.close()">
-        <mat-icon>close</mat-icon>
-      </button>
-    </header>
+    <section class="chatbot-panel" aria-label="FAQ chat">
+        <header class="chatbot-panel__header">
+            <div>
+                <h2>FAQ assistant</h2>
+                <p>Quick answers for calendar bookings</p>
+            </div>
+            <button mat-icon-button type="button" aria-label="Close FAQ chat" (click)="chatbotStore.close()">
+                <mat-icon>close</mat-icon>
+            </button>
+        </header>
 
-    <div class="chatbot-panel__messages">
-      @for (message of chatbotStore.messages(); track message.id) {
-        <div class="chatbot-message" [class.chatbot-message--user]="message.author === 'user'">
-          {{ message.text }}
+        <div class="chatbot-panel__messages">
+            @for (message of chatbotStore.messages(); track message.id) {
+                <div class="chatbot-message" [class.chatbot-message--user]="message.author === 'user'">
+                    {{ message.text }}
+                </div>
+            }
+
+            @if (chatbotStore.isLoading()) {
+                <div class="chatbot-message">Typing...</div>
+            }
         </div>
-      }
 
-      @if (chatbotStore.isLoading()) {
-        <div class="chatbot-message">Typing...</div>
-      }
-    </div>
-
-    <form class="chatbot-panel__form" (ngSubmit)="submitQuestion()">
-      <mat-form-field appearance="outline">
-        <mat-label>Ask a question</mat-label>
-        <input matInput [formControl]="questionControl" />
-      </mat-form-field>
-      <button mat-flat-button type="submit">Send</button>
-    </form>
-  </section>
+        <form class="chatbot-panel__form" (ngSubmit)="submitQuestion()">
+            <mat-form-field appearance="outline">
+                <mat-label>Ask a question</mat-label>
+                <input matInput [formControl]="questionControl" />
+            </mat-form-field>
+            <button mat-flat-button type="submit">Send</button>
+        </form>
+    </section>
 }

@@ -1,15 +1,12 @@
-<h2 mat-dialog-title>{{ data?.id ? 'Edit event' : 'Create event' }}</h2>
+<h2 mat-dialog-title>{{ data?.id ? "Edit event" : "Create event" }}</h2>
 
 <mat-dialog-content>
-  <app-calendar-event-form
-    #eventForm
-    [initialValue]="data?.initialValue || null"
-  />
+    <app-calendar-event-form #eventForm [initialValue]="data?.initialValue || null" />
 </mat-dialog-content>
 
 <mat-dialog-actions align="end">
-  <button mat-button type="button" mat-dialog-close>Cancel</button>
-  <button mat-flat-button type="button" (click)="saveEvent(eventForm)">
-    {{ data?.id ? 'Update' : 'Create' }}
-  </button>
+    <button mat-button type="button" mat-dialog-close>Cancel</button>
+    <button mat-flat-button type="button" (click)="saveEvent(eventForm)">
+        {{ data?.id ? "Update" : "Create" }}
+    </button>
 </mat-dialog-actions>

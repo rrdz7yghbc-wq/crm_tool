@@ -1,26 +1,26 @@
 <h2 mat-dialog-title>{{ data.title }}</h2>
 
 <mat-dialog-content>
-  <dl class="event-details">
-    <div>
-      <dt>ID</dt>
-      <dd>{{ data.id }}</dd>
-    </div>
+    <dl class="event-details">
+        <div>
+            <dt>ID</dt>
+            <dd>{{ data.id }}</dd>
+        </div>
 
-    <div>
-      <dt>Starts</dt>
-      <dd>{{ data.start | date: 'medium' }}</dd>
-    </div>
+        <div>
+            <dt>Starts</dt>
+            <dd>{{ data.start | date: "medium" }}</dd>
+        </div>
 
-    @if (data.end) {
-      <div>
-        <dt>Ends</dt>
-        <dd>{{ data.end | date: 'medium' }}</dd>
-      </div>
-    }
-  </dl>
+        @if (data.end) {
+            <div>
+                <dt>Ends</dt>
+                <dd>{{ data.end | date: "medium" }}</dd>
+            </div>
+        }
+    </dl>
 </mat-dialog-content>
 
 <mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close>Close</button>
+    <button mat-button mat-dialog-close>Close</button>
 </mat-dialog-actions>

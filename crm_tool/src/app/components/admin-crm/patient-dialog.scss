@@ -1,52 +1,52 @@
 .patient-form {
-  display: grid;
-  gap: 12px;
-  width: min(760px, calc(100vw - 96px));
-  margin-top: 6px;
+    display: grid;
+    gap: 12px;
+    width: min(760px, calc(100vw - 96px));
+    margin-top: 6px;
 }
 
 .patient-form__row {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
 }
 
 mat-form-field {
-  width: 100%;
+    width: 100%;
 }
 
 textarea {
-  resize: vertical;
+    resize: vertical;
 }
 
 .visit-history {
-  display: grid;
-  gap: 12px;
-  margin-top: 18px;
+    display: grid;
+    gap: 12px;
+    margin-top: 18px;
 
-  h3 {
-    margin: 0;
-    font-size: 1rem;
-  }
+    h3 {
+        margin: 0;
+        font-size: 1rem;
+    }
 
-  article {
-    padding: 12px;
-    border-radius: 8px;
-    background: var(--mat-sys-surface-container, #eef2f7);
-  }
+    article {
+        padding: 12px;
+        border-radius: 8px;
+        background: var(--mat-sys-surface-container, #eef2f7);
+    }
 
-  p {
-    margin: 6px 0 0;
-    color: var(--mat-sys-on-surface-variant, #667085);
-  }
+    p {
+        margin: 6px 0 0;
+        color: var(--mat-sys-on-surface-variant, #667085);
+    }
 }
 
 @media (max-width: 720px) {
-  .patient-form {
-    width: min(420px, calc(100vw - 64px));
-  }
+    .patient-form {
+        width: min(420px, calc(100vw - 64px));
+    }
 
-  .patient-form__row {
-    grid-template-columns: 1fr;
-  }
+    .patient-form__row {
+        grid-template-columns: 1fr;
+    }
 }

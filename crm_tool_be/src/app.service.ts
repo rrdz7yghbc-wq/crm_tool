@@ -5,9 +5,9 @@ export type { Patient } from '@prisma/client';
 
 @Injectable()
 export class AppService {
-  constructor(private readonly prisma: PrismaService) {}
+    constructor(private readonly prisma: PrismaService) {}
 
-  getHello(): string {
-    return 'Hello World!';
-  }
+    getHello(): string {
+        return 'Hello World!';
+    }
 }

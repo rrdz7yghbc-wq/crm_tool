@@ -4,4 +4,4 @@ export const customerUrls = {
     insertPatient: 'insertPatient',
     updatePatientById: 'updatePatientById',
     deletePatientById: 'deletePatientById',
-}
+};

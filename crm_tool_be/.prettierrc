@@ -1,4 +1,15 @@
 {
-  "singleQuote": true,
-  "trailingComma": "all"
+    "printWidth": 150,
+    "singleQuote": true,
+    "overrides": [
+        {
+            "files": "*.html",
+            "options": {
+                "parser": "angular",
+                "singleQuote": false
+            }
+        }
+    ],
+    "tabWidth": 4,
+    "trailingComma": "all"
 }

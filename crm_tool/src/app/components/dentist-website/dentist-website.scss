@@ -1,103 +1,101 @@
 .dentist-site {
-  min-height: 100dvh;
-  background: #f7fbfa;
-  color: #18332f;
+    min-height: 100dvh;
+    background: #f7fbfa;
+    color: #18332f;
 }
 
 .dentist-site__nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 18px 24px;
 }
 
 .dentist-site__brand {
-  color: inherit;
-  font-size: 1.125rem;
-  font-weight: 700;
-  text-decoration: none;
+    color: inherit;
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-decoration: none;
 }
 
 .dentist-site__hero {
-  display: grid;
-  min-height: 560px;
-  align-items: center;
-  padding: 72px 24px;
-  background:
-    linear-gradient(90deg, rgb(247 251 250 / 95%) 0%, rgb(247 251 250 / 72%) 48%, rgb(247 251 250 / 12%) 100%),
-    url('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1800&q=80')
-      center / cover;
+    display: grid;
+    min-height: 560px;
+    align-items: center;
+    padding: 72px 24px;
+    background:
+        linear-gradient(90deg, rgb(247 251 250 / 95%) 0%, rgb(247 251 250 / 72%) 48%, rgb(247 251 250 / 12%) 100%),
+        url('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1800&q=80') center / cover;
 }
 
 .dentist-site__content {
-  max-width: 640px;
-  margin: 0 auto;
+    max-width: 640px;
+    margin: 0 auto;
 
-  h1 {
-    margin: 0;
-    font-size: clamp(2.5rem, 6vw, 4.75rem);
-    line-height: 1;
-  }
+    h1 {
+        margin: 0;
+        font-size: clamp(2.5rem, 6vw, 4.75rem);
+        line-height: 1;
+    }
 
-  p {
-    max-width: 560px;
-    color: #365a54;
-    font-size: 1.125rem;
-    line-height: 1.6;
-  }
+    p {
+        max-width: 560px;
+        color: #365a54;
+        font-size: 1.125rem;
+        line-height: 1.6;
+    }
 }
 
 .dentist-site__eyebrow {
-  margin: 0 0 14px;
-  color: #00796b;
-  font-weight: 700;
-  text-transform: uppercase;
+    margin: 0 0 14px;
+    color: #00796b;
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 .dentist-site__services {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 36px 24px 56px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 36px 24px 56px;
 
-  article {
-    padding: 20px;
-    border: 1px solid #cfe1dd;
-    border-radius: 8px;
-    background: #ffffff;
-  }
+    article {
+        padding: 20px;
+        border: 1px solid #cfe1dd;
+        border-radius: 8px;
+        background: #ffffff;
+    }
 
-  h2 {
-    margin: 0 0 8px;
-    font-size: 1.125rem;
-  }
+    h2 {
+        margin: 0 0 8px;
+        font-size: 1.125rem;
+    }
 
-  p {
-    margin: 0;
-    color: #4e6d68;
-  }
+    p {
+        margin: 0;
+        color: #4e6d68;
+    }
 }
 
 @media (max-width: 760px) {
-  .dentist-site__nav {
-    align-items: flex-start;
-    flex-direction: column;
-  }
+    .dentist-site__nav {
+        align-items: flex-start;
+        flex-direction: column;
+    }
 
-  .dentist-site__hero {
-    min-height: 520px;
-    background:
-      linear-gradient(180deg, rgb(247 251 250 / 96%) 0%, rgb(247 251 250 / 78%) 100%),
-      url('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1200&q=80')
-        center / cover;
-  }
+    .dentist-site__hero {
+        min-height: 520px;
+        background:
+            linear-gradient(180deg, rgb(247 251 250 / 96%) 0%, rgb(247 251 250 / 78%) 100%),
+            url('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1200&q=80') center / cover;
+    }
 
-  .dentist-site__services {
-    grid-template-columns: 1fr;
-  }
+    .dentist-site__services {
+        grid-template-columns: 1fr;
+    }
 }

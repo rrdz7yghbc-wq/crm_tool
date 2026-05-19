@@ -8,25 +8,19 @@ import { MatInputModule } from '@angular/material/input';
 import { ChatbotStore } from '../../store';
 
 @Component({
-  selector: 'app-chatbot',
-  imports: [
-    MatButtonModule,
-    MatFormFieldModule,
-    MatIconModule,
-    MatInputModule,
-    ReactiveFormsModule,
-  ],
-  templateUrl: './chatbot.html',
-  styleUrl: './chatbot.scss',
+    selector: 'app-chatbot',
+    imports: [MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule, ReactiveFormsModule],
+    templateUrl: './chatbot.html',
+    styleUrl: './chatbot.scss',
 })
 export class Chatbot {
-  protected readonly chatbotStore = inject(ChatbotStore);
-  protected readonly questionControl = new FormControl('', { nonNullable: true });
+    protected readonly chatbotStore = inject(ChatbotStore);
+    protected readonly questionControl = new FormControl('', { nonNullable: true });
 
-  protected submitQuestion(): void {
-    const question = this.questionControl.value;
+    protected submitQuestion(): void {
+        const question = this.questionControl.value;
 
-    this.chatbotStore.ask(question);
-    this.questionControl.reset();
-  }
+        this.chatbotStore.ask(question);
+        this.questionControl.reset();
+    }
 }

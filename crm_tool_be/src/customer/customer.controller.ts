@@ -24,10 +24,7 @@ export class CustomerController {
     }
 
     @Put('updatePatientById/:id')
-    async updatePatientById(
-        @Param('id', ParseIntPipe) id: number,
-        @Body() request: UpdatePatientDto,
-    ): Promise<Patient> {
+    async updatePatientById(@Param('id', ParseIntPipe) id: number, @Body() request: UpdatePatientDto): Promise<Patient> {
         return await this.customerService.updatePatientById(id, request); // Implementation for updating a patient would go here
     }
 
