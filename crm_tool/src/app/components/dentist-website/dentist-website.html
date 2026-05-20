@@ -1,33 +1,34 @@
 <main class="dentist-site">
     <nav class="dentist-site__nav">
-        <a class="dentist-site__brand" routerLink="/">Aster Dental</a>
+        <a class="dentist-site__brand" routerLink="/">{{ 'common.appName' | translate }}</a>
         <div>
-            <a mat-button routerLink="/admin">Owner login</a>
-            <a mat-flat-button routerLink="/book">Book appointment now</a>
+            <a mat-button routerLink="/admin">{{ 'dentistWebsite.nav.ownerLogin' | translate }}</a>
+            <a mat-flat-button routerLink="/book">{{ 'dentistWebsite.nav.bookAppointment' | translate }}</a>
+            <app-language-switcher />
         </div>
     </nav>
 
     <section class="dentist-site__hero">
         <div class="dentist-site__content">
-            <p class="dentist-site__eyebrow">Family dentistry in Athens</p>
-            <h1>Calm, modern dental care for everyday smiles.</h1>
-            <p>Preventive care, cleanings, whitening, and urgent appointments with a gentle team and transparent scheduling.</p>
-            <a mat-flat-button routerLink="/book">Book appointment now</a>
+            <p class="dentist-site__eyebrow">{{ 'dentistWebsite.hero.eyebrow' | translate }}</p>
+            <h1>{{ 'dentistWebsite.hero.title' | translate }}</h1>
+            <p>{{ 'dentistWebsite.hero.subtitle' | translate }}</p>
+            <a mat-flat-button routerLink="/book">{{ 'dentistWebsite.hero.cta' | translate }}</a>
         </div>
     </section>
 
-    <section class="dentist-site__services" aria-label="Dental services">
+    <section class="dentist-site__services" [attr.aria-label]="'dentistWebsite.servicesAria' | translate">
         <article>
-            <h2>Checkups</h2>
-            <p>Routine exams, cleanings, and prevention plans.</p>
+            <h2>{{ 'dentistWebsite.services.checkups.title' | translate }}</h2>
+            <p>{{ 'dentistWebsite.services.checkups.description' | translate }}</p>
         </article>
         <article>
-            <h2>Cosmetic</h2>
-            <p>Whitening and smile-refresh treatments.</p>
+            <h2>{{ 'dentistWebsite.services.cosmetic.title' | translate }}</h2>
+            <p>{{ 'dentistWebsite.services.cosmetic.description' | translate }}</p>
         </article>
         <article>
-            <h2>Urgent care</h2>
-            <p>Fast help for tooth pain, chips, and sensitivity.</p>
+            <h2>{{ 'dentistWebsite.services.urgent.title' | translate }}</h2>
+            <p>{{ 'dentistWebsite.services.urgent.description' | translate }}</p>
         </article>
     </section>
 </main>

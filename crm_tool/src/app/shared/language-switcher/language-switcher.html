@@ -1,0 +1,10 @@
+<mat-button-toggle-group
+    class="language-switcher"
+    [value]="current"
+    (change)="change($event.value)"
+    hideSingleSelectionIndicator
+>
+    @for (lang of languages; track lang) {
+        <mat-button-toggle [value]="lang">{{ lang.toUpperCase() }}</mat-button-toggle>
+    }
+</mat-button-toggle-group>

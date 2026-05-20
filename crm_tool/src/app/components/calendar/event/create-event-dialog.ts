@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { provideNativeDateAdapter } from '@angular/material/core';
 import { MAT_DIALOG_DATA, MatDialogActions, MatDialogClose, MatDialogContent, MatDialogRef, MatDialogTitle } from '@angular/material/dialog';
+import { TranslatePipe } from '@ngx-translate/core';
 
 import { CalendarEventForm, CalendarEventFormInitialValue } from '../../../shared/calendar-event-form/calendar-event-form';
 import { CalendarEventFormValue } from '../../../services/calendar-event.service';
@@ -18,7 +19,7 @@ export interface CreateEventDialogResult {
 
 @Component({
     selector: 'app-create-event-dialog',
-    imports: [CalendarEventForm, MatButtonModule, MatDialogActions, MatDialogClose, MatDialogContent, MatDialogTitle],
+    imports: [CalendarEventForm, MatButtonModule, MatDialogActions, MatDialogClose, MatDialogContent, MatDialogTitle, TranslatePipe],
     templateUrl: './create-event-dialog.html',
     styleUrl: './create-event-dialog.scss',
     providers: [provideNativeDateAdapter()],

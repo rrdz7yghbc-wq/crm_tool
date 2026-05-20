@@ -4,10 +4,20 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { Router, RouterLink } from '@angular/router';
+import { TranslatePipe } from '@ngx-translate/core';
+import { LanguageSwitcher } from '../../shared/language-switcher/language-switcher';
 
 @Component({
     selector: 'app-admin-login',
-    imports: [MatButtonModule, MatFormFieldModule, MatInputModule, ReactiveFormsModule, RouterLink],
+    imports: [
+        MatButtonModule,
+        MatFormFieldModule,
+        MatInputModule,
+        ReactiveFormsModule,
+        RouterLink,
+        TranslatePipe,
+        LanguageSwitcher,
+    ],
     templateUrl: './admin-login.html',
     styleUrl: './admin-login.scss',
 })

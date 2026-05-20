@@ -7,14 +7,16 @@ import { FullCalendarModule } from '@fullcalendar/angular';
 import { CalendarOptions, EventClickArg, EventInput } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin, { DateClickArg } from '@fullcalendar/interaction';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 
 import { CalendarEventFormValue } from '../../services/calendar-event.service';
 import { CalendarEventStore } from '../../store/calendar-event.store';
+import { LanguageSwitcher } from '../../shared/language-switcher/language-switcher';
 import { CreateEventDialog, CreateEventDialogData, CreateEventDialogResult } from './event/create-event-dialog';
 
 @Component({
     selector: 'app-calendar',
-    imports: [FullCalendarModule, MatButtonModule, RouterLink],
+    imports: [FullCalendarModule, MatButtonModule, RouterLink, TranslatePipe, LanguageSwitcher],
     templateUrl: './calendar.html',
     styleUrl: './calendar.scss',
 })
@@ -23,6 +25,7 @@ export class Calendar implements OnInit {
     protected readonly calendarEventStore = inject(CalendarEventStore);
     private readonly activatedRoute = inject(ActivatedRoute);
     private readonly dialog = inject(MatDialog);
+    private readonly translate = inject(TranslateService);
     protected readonly isAdmin = this.activatedRoute.snapshot.data['mode'] === 'admin';
     protected readonly calendarEvents = computed(() => (this.isAdmin ? this.calendarEventStore.events() : this.getPublicEvents()));
 
@@ -122,7 +125,7 @@ export class Calendar implements OnInit {
     private getPublicEvents(): EventInput[] {
         return this.calendarEventStore.events().map((event) => ({
             id: event.id,
-            title: 'Taken',
+            title: this.translate.instant('calendar.publicEventTitle'),
             start: event.start || event.date,
             end: event.end,
             display: 'block',

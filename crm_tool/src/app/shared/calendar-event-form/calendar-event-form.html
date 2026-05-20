@@ -1,61 +1,61 @@
 <form class="calendar-event-form" [formGroup]="form">
     <div class="calendar-event-form__row">
         <mat-form-field appearance="outline">
-            <mat-label>Name</mat-label>
+            <mat-label>{{ 'calendarEventForm.fields.name' | translate }}</mat-label>
             <input matInput formControlName="name" />
             @if (form.controls.name.hasError("required")) {
-                <mat-error>Name is required</mat-error>
+                <mat-error>{{ 'calendarEventForm.errors.nameRequired' | translate }}</mat-error>
             }
         </mat-form-field>
 
         <mat-form-field appearance="outline">
-            <mat-label>Lastname</mat-label>
+            <mat-label>{{ 'calendarEventForm.fields.lastname' | translate }}</mat-label>
             <input matInput formControlName="lastname" />
             @if (form.controls.lastname.hasError("required")) {
-                <mat-error>Lastname is required</mat-error>
+                <mat-error>{{ 'calendarEventForm.errors.lastnameRequired' | translate }}</mat-error>
             }
         </mat-form-field>
     </div>
 
     <div class="calendar-event-form__row">
         <mat-form-field appearance="outline">
-            <mat-label>Phone</mat-label>
+            <mat-label>{{ 'calendarEventForm.fields.phone' | translate }}</mat-label>
             <input matInput formControlName="phone" />
             @if (form.controls.phone.hasError("required")) {
-                <mat-error>Phone is required</mat-error>
+                <mat-error>{{ 'calendarEventForm.errors.phoneRequired' | translate }}</mat-error>
             }
         </mat-form-field>
 
         <mat-form-field appearance="outline">
-            <mat-label>Email</mat-label>
+            <mat-label>{{ 'calendarEventForm.fields.email' | translate }}</mat-label>
             <input matInput type="email" formControlName="email" />
             @if (form.controls.email.hasError("required")) {
-                <mat-error>Email is required</mat-error>
+                <mat-error>{{ 'calendarEventForm.errors.emailRequired' | translate }}</mat-error>
             }
             @if (form.controls.email.hasError("email")) {
-                <mat-error>Enter a valid email</mat-error>
+                <mat-error>{{ 'calendarEventForm.errors.emailInvalid' | translate }}</mat-error>
             }
         </mat-form-field>
     </div>
 
     <mat-form-field appearance="outline">
-        <mat-label>Address</mat-label>
+        <mat-label>{{ 'calendarEventForm.fields.address' | translate }}</mat-label>
         <input matInput formControlName="address" />
     </mat-form-field>
 
     <div class="calendar-event-form__row">
         <mat-form-field appearance="outline">
-            <mat-label>Date from</mat-label>
+            <mat-label>{{ 'calendarEventForm.fields.dateFrom' | translate }}</mat-label>
             <input matInput readonly formControlName="dateFrom" [matDatepicker]="dateFromPicker" (click)="dateFromPicker.open()" />
             <mat-datepicker-toggle matIconSuffix [for]="dateFromPicker" />
             <mat-datepicker #dateFromPicker />
             @if (form.controls.dateFrom.hasError("required")) {
-                <mat-error>Date from is required</mat-error>
+                <mat-error>{{ 'calendarEventForm.errors.dateFromRequired' | translate }}</mat-error>
             }
         </mat-form-field>
 
         <mat-form-field appearance="outline">
-            <mat-label>Date to</mat-label>
+            <mat-label>{{ 'calendarEventForm.fields.dateTo' | translate }}</mat-label>
             <input matInput readonly formControlName="dateTo" [matDatepicker]="dateToPicker" (click)="dateToPicker.open()" />
             <mat-datepicker-toggle matIconSuffix [for]="dateToPicker" />
             <mat-datepicker #dateToPicker />
@@ -63,7 +63,7 @@
     </div>
 
     <mat-form-field appearance="outline">
-        <mat-label>Comments</mat-label>
+        <mat-label>{{ 'calendarEventForm.fields.comments' | translate }}</mat-label>
         <textarea matInput formControlName="comments" rows="4"></textarea>
     </mat-form-field>
 </form>

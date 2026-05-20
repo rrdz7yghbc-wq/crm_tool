@@ -2,6 +2,7 @@ import { DatePipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MAT_DIALOG_DATA, MatDialogActions, MatDialogClose, MatDialogContent, MatDialogTitle } from '@angular/material/dialog';
+import { TranslatePipe } from '@ngx-translate/core';
 
 export interface CalendarEventDialogData {
     id: string;
@@ -12,7 +13,7 @@ export interface CalendarEventDialogData {
 
 @Component({
     selector: 'app-event-dialog',
-    imports: [DatePipe, MatButtonModule, MatDialogActions, MatDialogClose, MatDialogContent, MatDialogTitle],
+    imports: [DatePipe, MatButtonModule, MatDialogActions, MatDialogClose, MatDialogContent, MatDialogTitle, TranslatePipe],
     templateUrl: './event-dialog.html',
     styleUrl: './event-dialog.scss',
 })

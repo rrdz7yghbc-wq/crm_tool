@@ -1,21 +1,26 @@
 <main class="admin-login">
     <section class="admin-login__panel">
-        <a routerLink="/">Aster Dental</a>
-        <h1>Owner login</h1>
-        <p>Mock admin access for managing appointments and future calendar sync.</p>
+        <header class="admin-login__header">
+            <a routerLink="/">{{ 'common.appName' | translate }}</a>
+            <app-language-switcher />
+        </header>
+        <h1>{{ 'adminLogin.title' | translate }}</h1>
+        <p>{{ 'adminLogin.subtitle' | translate }}</p>
 
         <form class="admin-login__form" (ngSubmit)="login()">
             <mat-form-field appearance="outline">
-                <mat-label>Email</mat-label>
+                <mat-label>{{ 'adminLogin.emailLabel' | translate }}</mat-label>
                 <input matInput type="email" [formControl]="email" />
             </mat-form-field>
 
             <mat-form-field appearance="outline">
-                <mat-label>Password</mat-label>
+                <mat-label>{{ 'adminLogin.passwordLabel' | translate }}</mat-label>
                 <input matInput type="password" [formControl]="password" />
             </mat-form-field>
 
-            <button mat-flat-button type="button" (click)="login()">Login</button>
+            <button mat-flat-button type="button" (click)="login()">
+                {{ 'adminLogin.submit' | translate }}
+            </button>
         </form>
     </section>
 </main>

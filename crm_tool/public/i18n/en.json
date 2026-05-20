@@ -1,0 +1,137 @@
+{
+    "common": {
+        "appName": "Aster Dental",
+        "language": "Language",
+        "languages": {
+            "en": "English",
+            "el": "Greek"
+        },
+        "actions": {
+            "cancel": "Cancel",
+            "close": "Close"
+        }
+    },
+    "adminLogin": {
+        "title": "Owner login",
+        "subtitle": "Mock admin access for managing appointments and future calendar sync.",
+        "emailLabel": "Email",
+        "passwordLabel": "Password",
+        "submit": "Login"
+    },
+    "adminCrm": {
+        "workspace": "Owner workspace",
+        "title": "Patient CRM",
+        "nav": {
+            "calendar": "Calendar",
+            "newPatient": "New patient"
+        },
+        "patientListAria": "Patient list",
+        "columns": {
+            "name": "Name",
+            "lastname": "Lastname",
+            "phone": "Phone number",
+            "email": "Email"
+        }
+    },
+    "patientDialog": {
+        "titleEdit": "Patient record",
+        "titleNew": "New patient",
+        "fields": {
+            "name": "Name",
+            "lastname": "Lastname",
+            "phone": "Phone",
+            "email": "Email",
+            "address": "Address",
+            "dateOfBirth": "Date of birth",
+            "medicalHistory": "Recorded medical history"
+        },
+        "visitHistory": "Visit history",
+        "actions": {
+            "update": "Update patient",
+            "create": "Create patient"
+        }
+    },
+    "calendar": {
+        "nav": {
+            "patientCrm": "Patient CRM"
+        },
+        "actions": {
+            "newEvent": "New event",
+            "bookAppointment": "Book appointment"
+        },
+        "loading": "Calendar loading",
+        "publicEventTitle": "Taken"
+    },
+    "createEventDialog": {
+        "titleEdit": "Edit event",
+        "titleNew": "Create event",
+        "actions": {
+            "update": "Update",
+            "create": "Create"
+        }
+    },
+    "eventDialog": {
+        "fields": {
+            "id": "ID",
+            "starts": "Starts",
+            "ends": "Ends"
+        }
+    },
+    "chatbot": {
+        "openAria": "Open FAQ chat",
+        "closeAria": "Close FAQ chat",
+        "title": "FAQ assistant",
+        "subtitle": "Quick answers for calendar bookings",
+        "panelAria": "FAQ chat",
+        "typing": "Typing...",
+        "inputLabel": "Ask a question",
+        "send": "Send"
+    },
+    "dentistWebsite": {
+        "nav": {
+            "ownerLogin": "Owner login",
+            "bookAppointment": "Book appointment now"
+        },
+        "hero": {
+            "eyebrow": "Family dentistry in Athens",
+            "title": "Calm, modern dental care for everyday smiles.",
+            "subtitle": "Preventive care, cleanings, whitening, and urgent appointments with a gentle team and transparent scheduling.",
+            "cta": "Book appointment now"
+        },
+        "servicesAria": "Dental services",
+        "services": {
+            "checkups": {
+                "title": "Checkups",
+                "description": "Routine exams, cleanings, and prevention plans."
+            },
+            "cosmetic": {
+                "title": "Cosmetic",
+                "description": "Whitening and smile-refresh treatments."
+            },
+            "urgent": {
+                "title": "Urgent care",
+                "description": "Fast help for tooth pain, chips, and sensitivity."
+            }
+        }
+    },
+    "calendarEventForm": {
+        "fields": {
+            "name": "Name",
+            "lastname": "Lastname",
+            "phone": "Phone",
+            "email": "Email",
+            "address": "Address",
+            "dateFrom": "Date from",
+            "dateTo": "Date to",
+            "comments": "Comments"
+        },
+        "errors": {
+            "nameRequired": "Name is required",
+            "lastnameRequired": "Lastname is required",
+            "phoneRequired": "Phone is required",
+            "emailRequired": "Email is required",
+            "emailInvalid": "Enter a valid email",
+            "dateFromRequired": "Date from is required"
+        }
+    }
+}

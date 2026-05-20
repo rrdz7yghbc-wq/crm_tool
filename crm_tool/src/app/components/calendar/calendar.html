@@ -1,16 +1,17 @@
 <section class="calendar-page">
     <div class="calendar-actions">
         @if (isAdmin) {
-            <a mat-button routerLink="/admin/crm">Patient CRM</a>
+            <a mat-button routerLink="/admin/crm">{{ 'calendar.nav.patientCrm' | translate }}</a>
         }
         <button mat-flat-button type="button" (click)="openCreateEventDialog()">
-            {{ isAdmin ? "New event" : "Book appointment" }}
+            {{ (isAdmin ? 'calendar.actions.newEvent' : 'calendar.actions.bookAppointment') | translate }}
         </button>
+        <app-language-switcher />
     </div>
 
     @if (isBrowser) {
         <full-calendar [options]="calendarOptions" [events]="calendarEvents()" />
     } @else {
-        <div class="calendar-loading" aria-hidden="true">Calendar loading</div>
+        <div class="calendar-loading" aria-hidden="true">{{ 'calendar.loading' | translate }}</div>
     }
 </section>

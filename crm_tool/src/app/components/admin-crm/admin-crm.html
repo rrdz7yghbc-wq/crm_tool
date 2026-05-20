@@ -1,19 +1,24 @@
 <main class="admin-crm">
     <header class="admin-crm__header">
         <div>
-            <p>Owner workspace</p>
-            <h1>Patient CRM</h1>
+            <p>{{ 'adminCrm.workspace' | translate }}</p>
+            <h1>{{ 'adminCrm.title' | translate }}</h1>
         </div>
         <nav>
-            <a mat-button routerLink="/admin/calendar">Calendar</a>
-            <button mat-flat-button type="button" (click)="openCreatePatientDialog()">New patient</button>
+            <a mat-button routerLink="/admin/calendar">{{ 'adminCrm.nav.calendar' | translate }}</a>
+            <button mat-flat-button type="button" (click)="openCreatePatientDialog()">
+                {{ 'adminCrm.nav.newPatient' | translate }}
+            </button>
+            <app-language-switcher />
         </nav>
     </header>
 
-    <section class="admin-crm__table" aria-label="Patient list">
+    <section class="admin-crm__table" [attr.aria-label]="'adminCrm.patientListAria' | translate">
         <table mat-table [dataSource]="dataSource" matSort>
             <ng-container matColumnDef="name">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                    {{ 'adminCrm.columns.name' | translate }}
+                </th>
                 <td mat-cell *matCellDef="let patient">
                     <button class="patient-link" type="button" (click)="openPatient(patient)">
                         {{ patient.name }}
@@ -22,17 +27,19 @@
             </ng-container>
 
             <ng-container matColumnDef="lastname">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header>Lastname</th>
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                    {{ 'adminCrm.columns.lastname' | translate }}
+                </th>
                 <td mat-cell *matCellDef="let patient">{{ patient.lastname }}</td>
             </ng-container>
 
             <ng-container matColumnDef="phone">
-                <th mat-header-cell *matHeaderCellDef>Phone number</th>
+                <th mat-header-cell *matHeaderCellDef>{{ 'adminCrm.columns.phone' | translate }}</th>
                 <td mat-cell *matCellDef="let patient">{{ patient.phone }}</td>
             </ng-container>
 
             <ng-container matColumnDef="email">
-                <th mat-header-cell *matHeaderCellDef>Email</th>
+                <th mat-header-cell *matHeaderCellDef>{{ 'adminCrm.columns.email' | translate }}</th>
                 <td mat-cell *matCellDef="let patient">{{ patient.email }}</td>
             </ng-container>
 

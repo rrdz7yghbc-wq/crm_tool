@@ -3,6 +3,7 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { TranslatePipe } from '@ngx-translate/core';
 
 import { CalendarEventFormValue } from '../../services/calendar-event.service';
 
@@ -10,7 +11,7 @@ export type CalendarEventFormInitialValue = Partial<CalendarEventFormValue>;
 
 @Component({
     selector: 'app-calendar-event-form',
-    imports: [MatDatepickerModule, MatFormFieldModule, MatInputModule, ReactiveFormsModule],
+    imports: [MatDatepickerModule, MatFormFieldModule, MatInputModule, ReactiveFormsModule, TranslatePipe],
     templateUrl: './calendar-event-form.html',
     styleUrl: './calendar-event-form.scss',
 })
