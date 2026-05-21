@@ -5,13 +5,23 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { RouterLink } from '@angular/router';
+import { TranslatePipe } from '@ngx-translate/core';
 import { PatientStore } from '../../store';
 import { PatientDialog } from './patient-dialog';
 import { Patient } from '../../interfaces/patient.interfaces';
+import { LanguageSwitcher } from '../../shared/language-switcher/language-switcher';
 
 @Component({
     selector: 'app-admin-crm',
-    imports: [MatButtonModule, MatPaginatorModule, MatSortModule, MatTableModule, RouterLink],
+    imports: [
+        MatButtonModule,
+        MatPaginatorModule,
+        MatSortModule,
+        MatTableModule,
+        RouterLink,
+        TranslatePipe,
+        LanguageSwitcher,
+    ],
     templateUrl: './admin-crm.html',
     styleUrl: './admin-crm.scss',
 })

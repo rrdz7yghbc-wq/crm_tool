@@ -1,0 +1,9 @@
+<button
+    type="button"
+    class="language-switcher"
+    [attr.aria-label]="other().tooltipKey | translate"
+    [title]="other().tooltipKey | translate"
+    (click)="toggle()"
+>
+    <img class="language-switcher__flag" [src]="other().flag" [alt]="other().flagAlt" />
+</button>

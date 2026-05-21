@@ -5,6 +5,7 @@ import { MAT_DIALOG_DATA, MatDialogActions, MatDialogClose, MatDialogContent, Ma
 import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { TranslatePipe } from '@ngx-translate/core';
 import { Patient } from '../../interfaces/patient.interfaces';
 
 @Component({
@@ -19,6 +20,7 @@ import { Patient } from '../../interfaces/patient.interfaces';
         MatFormFieldModule,
         MatInputModule,
         ReactiveFormsModule,
+        TranslatePipe,
     ],
     templateUrl: './patient-dialog.html',
     styleUrl: './patient-dialog.scss',

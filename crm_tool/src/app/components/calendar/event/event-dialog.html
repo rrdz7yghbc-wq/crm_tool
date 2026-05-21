@@ -3,18 +3,18 @@
 <mat-dialog-content>
     <dl class="event-details">
         <div>
-            <dt>ID</dt>
+            <dt>{{ 'eventDialog.fields.id' | translate }}</dt>
             <dd>{{ data.id }}</dd>
         </div>
 
         <div>
-            <dt>Starts</dt>
+            <dt>{{ 'eventDialog.fields.starts' | translate }}</dt>
             <dd>{{ data.start | date: "medium" }}</dd>
         </div>
 
         @if (data.end) {
             <div>
-                <dt>Ends</dt>
+                <dt>{{ 'eventDialog.fields.ends' | translate }}</dt>
                 <dd>{{ data.end | date: "medium" }}</dd>
             </div>
         }
@@ -22,5 +22,5 @@
 </mat-dialog-content>
 
 <mat-dialog-actions align="end">
-    <button mat-button mat-dialog-close>Close</button>
+    <button mat-button mat-dialog-close>{{ 'common.actions.close' | translate }}</button>
 </mat-dialog-actions>

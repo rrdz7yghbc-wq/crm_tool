@@ -1,0 +1,139 @@
+{
+    "common": {
+        "appName": "Aster Dental",
+        "language": "Γλώσσα",
+        "languages": {
+            "en": "Αγγλικά",
+            "el": "Ελληνικά"
+        },
+        "actions": {
+            "cancel": "Άκυρο",
+            "close": "Κλείσιμο"
+        },
+        "switchToEnglish": "Αλλαγή στα Αγγλικά",
+        "switchToGreek": "Αλλαγή στα Ελληνικά"
+    },
+    "adminLogin": {
+        "title": "Σύνδεση ιδιοκτήτη",
+        "subtitle": "Δοκιμαστική πρόσβαση διαχειριστή για τη διαχείριση ραντεβού και τον μελλοντικό συγχρονισμό ημερολογίου.",
+        "emailLabel": "Email",
+        "passwordLabel": "Κωδικός πρόσβασης",
+        "submit": "Σύνδεση"
+    },
+    "adminCrm": {
+        "workspace": "Χώρος εργασίας ιδιοκτήτη",
+        "title": "CRM ασθενών",
+        "nav": {
+            "calendar": "Ημερολόγιο",
+            "newPatient": "Νέος ασθενής"
+        },
+        "patientListAria": "Λίστα ασθενών",
+        "columns": {
+            "name": "Όνομα",
+            "lastname": "Επώνυμο",
+            "phone": "Τηλέφωνο",
+            "email": "Email"
+        }
+    },
+    "patientDialog": {
+        "titleEdit": "Καρτέλα ασθενούς",
+        "titleNew": "Νέος ασθενής",
+        "fields": {
+            "name": "Όνομα",
+            "lastname": "Επώνυμο",
+            "phone": "Τηλέφωνο",
+            "email": "Email",
+            "address": "Διεύθυνση",
+            "dateOfBirth": "Ημερομηνία γέννησης",
+            "medicalHistory": "Καταγεγραμμένο ιατρικό ιστορικό"
+        },
+        "visitHistory": "Ιστορικό επισκέψεων",
+        "actions": {
+            "update": "Ενημέρωση ασθενούς",
+            "create": "Δημιουργία ασθενούς"
+        }
+    },
+    "calendar": {
+        "nav": {
+            "patientCrm": "CRM ασθενών"
+        },
+        "actions": {
+            "newEvent": "Νέα εκδήλωση",
+            "bookAppointment": "Κλείσιμο ραντεβού"
+        },
+        "loading": "Φόρτωση ημερολογίου",
+        "publicEventTitle": "Κατειλημμένο"
+    },
+    "createEventDialog": {
+        "titleEdit": "Επεξεργασία εκδήλωσης",
+        "titleNew": "Δημιουργία εκδήλωσης",
+        "actions": {
+            "update": "Ενημέρωση",
+            "create": "Δημιουργία"
+        }
+    },
+    "eventDialog": {
+        "fields": {
+            "id": "Κωδικός",
+            "starts": "Έναρξη",
+            "ends": "Λήξη"
+        }
+    },
+    "chatbot": {
+        "openAria": "Άνοιγμα συνομιλίας FAQ",
+        "closeAria": "Κλείσιμο συνομιλίας FAQ",
+        "title": "Βοηθός FAQ",
+        "subtitle": "Γρήγορες απαντήσεις για κρατήσεις ραντεβού",
+        "panelAria": "Συνομιλία FAQ",
+        "typing": "Πληκτρολογεί...",
+        "inputLabel": "Κάντε μια ερώτηση",
+        "send": "Αποστολή"
+    },
+    "dentistWebsite": {
+        "nav": {
+            "ownerLogin": "Σύνδεση ιδιοκτήτη",
+            "bookAppointment": "Κλείστε ραντεβού τώρα"
+        },
+        "hero": {
+            "eyebrow": "Οικογενειακή οδοντιατρική στην Αθήνα",
+            "title": "Ήρεμη, σύγχρονη οδοντιατρική φροντίδα για καθημερινά χαμόγελα.",
+            "subtitle": "Προληπτική φροντίδα, καθαρισμοί, λεύκανση και επείγοντα ραντεβού με μια ευγενική ομάδα και διαφανή προγραμματισμό.",
+            "cta": "Κλείστε ραντεβού τώρα"
+        },
+        "servicesAria": "Οδοντιατρικές υπηρεσίες",
+        "services": {
+            "checkups": {
+                "title": "Έλεγχοι",
+                "description": "Τακτικές εξετάσεις, καθαρισμοί και προγράμματα πρόληψης."
+            },
+            "cosmetic": {
+                "title": "Αισθητική",
+                "description": "Λεύκανση και θεραπείες ανανέωσης χαμόγελου."
+            },
+            "urgent": {
+                "title": "Επείγουσα φροντίδα",
+                "description": "Άμεση βοήθεια για πόνο δοντιών, σπασίματα και ευαισθησία."
+            }
+        }
+    },
+    "calendarEventForm": {
+        "fields": {
+            "name": "Όνομα",
+            "lastname": "Επώνυμο",
+            "phone": "Τηλέφωνο",
+            "email": "Email",
+            "address": "Διεύθυνση",
+            "dateFrom": "Από ημερομηνία",
+            "dateTo": "Έως ημερομηνία",
+            "comments": "Σχόλια"
+        },
+        "errors": {
+            "nameRequired": "Το όνομα είναι υποχρεωτικό",
+            "lastnameRequired": "Το επώνυμο είναι υποχρεωτικό",
+            "phoneRequired": "Το τηλέφωνο είναι υποχρεωτικό",
+            "emailRequired": "Το email είναι υποχρεωτικό",
+            "emailInvalid": "Εισάγετε ένα έγκυρο email",
+            "dateFromRequired": "Η ημερομηνία έναρξης είναι υποχρεωτική"
+        }
+    }
+}

@@ -1,45 +1,47 @@
-<h2 mat-dialog-title>{{ patient ? "Patient record" : "New patient" }}</h2>
+<h2 mat-dialog-title>
+    {{ (patient ? 'patientDialog.titleEdit' : 'patientDialog.titleNew') | translate }}
+</h2>
 
 <mat-dialog-content>
     <form class="patient-form" [formGroup]="patientForm">
         <div class="patient-form__row">
             <mat-form-field appearance="outline">
-                <mat-label>Name</mat-label>
+                <mat-label>{{ 'patientDialog.fields.name' | translate }}</mat-label>
                 <input matInput formControlName="name" />
             </mat-form-field>
 
             <mat-form-field appearance="outline">
-                <mat-label>Lastname</mat-label>
+                <mat-label>{{ 'patientDialog.fields.lastname' | translate }}</mat-label>
                 <input matInput formControlName="lastname" />
             </mat-form-field>
         </div>
 
         <div class="patient-form__row">
             <mat-form-field appearance="outline">
-                <mat-label>Phone</mat-label>
+                <mat-label>{{ 'patientDialog.fields.phone' | translate }}</mat-label>
                 <input matInput formControlName="phone" />
             </mat-form-field>
 
             <mat-form-field appearance="outline">
-                <mat-label>Email</mat-label>
+                <mat-label>{{ 'patientDialog.fields.email' | translate }}</mat-label>
                 <input matInput type="email" formControlName="email" />
             </mat-form-field>
         </div>
 
         <div class="patient-form__row">
             <mat-form-field appearance="outline">
-                <mat-label>Address</mat-label>
+                <mat-label>{{ 'patientDialog.fields.address' | translate }}</mat-label>
                 <input matInput formControlName="address" />
             </mat-form-field>
 
             <mat-form-field appearance="outline">
-                <mat-label>Date of birth</mat-label>
+                <mat-label>{{ 'patientDialog.fields.dateOfBirth' | translate }}</mat-label>
                 <input matInput type="date" formControlName="dateOfBirth" />
             </mat-form-field>
         </div>
 
         <mat-form-field appearance="outline">
-            <mat-label>Recorded medical history</mat-label>
+            <mat-label>{{ 'patientDialog.fields.medicalHistory' | translate }}</mat-label>
             <textarea matInput formControlName="medicalHistory" rows="5"></textarea>
         </mat-form-field>
     </form>
@@ -48,7 +50,7 @@
         <mat-divider />
 
         <section class="visit-history">
-            <h3>Visit history</h3>
+            <h3>{{ 'patientDialog.visitHistory' | translate }}</h3>
             @for (visit of patient?.visits; track visit.date + visit.reason) {
                 <article>
                     <strong>{{ visit.date }} · {{ visit.reason }}</strong>
@@ -60,8 +62,8 @@
 </mat-dialog-content>
 
 <mat-dialog-actions align="end">
-    <button mat-button type="button" mat-dialog-close>Cancel</button>
+    <button mat-button type="button" mat-dialog-close>{{ 'common.actions.cancel' | translate }}</button>
     <button mat-flat-button type="button" (click)="save()">
-        {{ patient ? "Update patient" : "Create patient" }}
+        {{ (patient ? 'patientDialog.actions.update' : 'patientDialog.actions.create') | translate }}
     </button>
 </mat-dialog-actions>
