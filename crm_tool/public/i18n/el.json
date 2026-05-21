@@ -9,7 +9,9 @@
         "actions": {
             "cancel": "Άκυρο",
             "close": "Κλείσιμο"
-        }
+        },
+        "switchToEnglish": "Αλλαγή στα Αγγλικά",
+        "switchToGreek": "Αλλαγή στα Ελληνικά"
     },
     "adminLogin": {
         "title": "Σύνδεση ιδιοκτήτη",

@@ -1,10 +1,9 @@
-<mat-button-toggle-group
+<button
+    type="button"
     class="language-switcher"
-    [value]="current"
-    (change)="change($event.value)"
-    hideSingleSelectionIndicator
+    [attr.aria-label]="other().tooltipKey | translate"
+    [title]="other().tooltipKey | translate"
+    (click)="toggle()"
 >
-    @for (lang of languages; track lang) {
-        <mat-button-toggle [value]="lang">{{ lang.toUpperCase() }}</mat-button-toggle>
-    }
-</mat-button-toggle-group>
+    <img class="language-switcher__flag" [src]="other().flag" [alt]="other().flagAlt" />
+</button>
